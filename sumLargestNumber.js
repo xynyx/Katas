@@ -1,3 +1,30 @@
+let sumLargestNumbers = function (data) {
+  let addTwoMaxValues = data
+    // sort function compares one value next to the other, and switches their index depending on the value
+    // This here will compare and switch values so that they are in ascending order
+    // eg. Array of 3,2,1  ==> 3 - 2 = 1, which means a > b, so they must switch positions
+    // Now looks like 2,3,1
+    .sort((a, b) => a - b)
+    // Takes out the last 2 values of the new array (being the two highest values!)
+    .slice(-2)
+    // Reduce executes reducer function (that you provide) on each element of the array (being the 2 highest remaining values)
+    // Different syntax compared to sort, but does same thing; however arrow function is simpler and easier to read
+    // arr.reduce(callback( accumulator, currentValue[, index[, array]] )[, initialValue])
+    // a = accumulator, b = currentValue
+    // accumulator being the last callback return value
+    .reduce(function (a, b) { return a + b; });
+  return addTwoMaxValues;
+}
+
+
+console.log(sumLargestNumbers([1, 10]));
+console.log(sumLargestNumbers([1, 2, 3]));
+console.log(sumLargestNumbers([10, 4, 34, 6, 92, 2]));
+
+
+
+// OLD ANSWER - found better method (see above)
+
 /* let sumLargestNumbers = function (data) {
   // If array only has 2 values, automatically add them and return
   if (data.length === 2) {
@@ -39,26 +66,3 @@ function max(arr) {
     }
   } return maxArray;
 } */
-
-let sumLargestNumbers = function (data) {
-  let addTwoMaxValues = data
-    // sort function compares one value next to the other, and switches their index depending on the value
-    // This here will compare and switch values so that they are in ascending order
-    // eg. Array of 3,2,1  ==> 3 - 2 = 1, which means a > b, so they must switch positions
-    // Now looks like 2,3,1
-    .sort((a, b) => a - b)
-    // Takes out the last 2 values of the new array (being the two highest values!)
-    .slice(-2)
-    // Reduce executes reducer function (that you provide) on each element of the array (being the 2 highest remaining values)
-    // Different syntax compared to sort, but does same thing; however arrow function is simpler and easier to read
-    // arr.reduce(callback( accumulator, currentValue[, index[, array]] )[, initialValue])
-    // a = accumulator, b = currentValue
-    // accumulator being the last callback return value
-    .reduce(function (a, b) { return a + b; });
-  return addTwoMaxValues;
-}
-
-
-console.log(sumLargestNumbers([1, 10]));
-console.log(sumLargestNumbers([1, 2, 3]));
-console.log(sumLargestNumbers([10, 4, 34, 6, 92, 2]));
