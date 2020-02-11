@@ -12,7 +12,7 @@ const instructorWithLongestName = function(instructors) {
       if (object.name.length > longestName) { 
         // If the current object.name.length is greater than the longestName, replace it; if not, do not run this code and continue to the next object in array
         longestName = instructors[index].name.length;
-        // As the goal is to return the object (and not just the name), you must also assign the index of the current largest name
+        // As the goal is to return the object (and not just the name), you must also assign the index of the object with the current largest name
         longestArray = instructors[index];
       }
   })
