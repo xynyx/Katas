@@ -1,4 +1,5 @@
 const sumLargestNumbers = function (data) {
+  // This expanded form is easier to read, but it is the same as saying 'data.sort.slice.reduce'
   let addTwoMaxValues = data
     // sort function compares one value next to the other, and switches their index depending on the value
     // This here will compare and switch values so that they are in ascending order
