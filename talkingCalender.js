@@ -5,7 +5,6 @@ let talkingCalendar = function (date) {
   let day = convertDay(dateArray[2]);
   let year = dateArray[0];
   return month + " " + day + ", " + year;
-
 };
 
 // Originally had else if statements here, but it quickly became crowded and repetitive; switch felt like a better solution
@@ -35,7 +34,7 @@ function convertDay(day) {
     case "02": case "22": return parseInt(day) + "nd";
     case "03": return parseInt(day) + "rd";
     default: return parseInt(day) + "th";
-    
+
   }
 }
 
