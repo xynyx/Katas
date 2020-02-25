@@ -1,6 +1,7 @@
 function merge(array1, array2) {
   // Concat() combines arrays, but does not sort
   let newArray = array1.concat(array2);
+  // arr.sort([compareFunction])
   // Sort() sorts elements (converted to strings), comparing their UTF-16 code units value 
   // In order to sort numerical values, you must specify a compareFunction parameter with sort
   // To sort numbers in ascending order, sort each element by subtracting one from the other (a - b)
