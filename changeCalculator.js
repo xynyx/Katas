@@ -19,6 +19,7 @@ let calculateChange = function (total, cash) {
   }
 
   // Since the above code prints out the keys with a value of 0 as well, you must use a for...in loop to check to see which keys have a value of 0, and to delete them from the object
+  // for (variable in object) (variable / object being the parameters; in is the joining word)
   for (let key in finalChange) {
     if (finalChange[key] === 0) {
       delete finalChange[key];
