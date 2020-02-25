@@ -14,7 +14,7 @@ let calculateChange = function (total, cash) {
     // Had issues with the nickel being over-used; for example, remainder of 499 % 10 = 9, and 9 / 5 = 1 (Math.floor), however that calculation was incorrect
     // multiplying the calculation by anything less than half (eg. * 0.2 worked as well) returns the true amount of nickels    
     nickel: Math.floor((remaining % 10 / 5) * 0.5),
-    // No division necessary because 5 is the second smallest value, and the modulo of that can only be issued with pennies
+    // No division necessary because 5 is the second smallest value, and (remaining % 5) can only be issued with pennies
     penny: Math.floor(remaining % 5),
   }
 
