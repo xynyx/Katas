@@ -44,7 +44,7 @@ const queenThreat = function (board) {
   }
 
   // Diagonal
-  let b = whiteQueen[0]; // 1
+  let b = whiteQueen[0];
   let x = whiteQueen[1] - 1; // for LEFT side
   let y = whiteQueen[1] + 1; // for RIGHT side
 
@@ -65,7 +65,7 @@ const queenThreat = function (board) {
   // Diagonal left and right up
   let k = x;
   let g = y;
-  for (j = b - 1; j >= 0; j--) { //j = 0, i =
+  for (j = b - 1; j >= 0; j--) {
     board[j][k] === 1 ? collision = true : collision;
     k--;
     board[j][g] === 1 ? collision = true : collision;
