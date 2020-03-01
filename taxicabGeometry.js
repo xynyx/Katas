@@ -3,7 +3,7 @@ const blocksAway = function(directions) {
   let initial = [0, 0];
   let movement;
   directions.forEach(function(direction, index) {
-    // As depending on how many times the cab goes in one direction, its facing directions get changed
+    // As depending on how many times the cab goes in one direction, its facing direction gets changed
     // Checking to see how many times it has gone in the same direction allows you to reorient which direction it is facing (ie. if it has gone right 3 times, technically left is now right, and right is now left!)
     if (direction === "right") {
       if (directions[index-2] === "right") {
