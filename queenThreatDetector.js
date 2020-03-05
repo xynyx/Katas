@@ -19,29 +19,9 @@ const queenThreat = function (board) {
   // Have to create a DEEP copy of an array; this seemed like the easiest method
   let newBoard = JSON.parse(JSON.stringify(board));
 
-  // ALL of these reference only ONE of the queens, as you only need to calculate if one of the queens will hit the other
-  // Makes it a lot easier to determine whether they will collide because you always start from the whiteQueen's position
+  whiteQueen[0] === blackQueen[0] ? collision = true : collision = false;
+  whiteQueen[1] === whiteQueen[1] ? collision = true : collision = false;
 
-  // Horizontal
-  let horizontal = newBoard[whiteQueen[0]];
-  // Remove the whiteQueen, replace with 0, and then check the rest of the array to see if any other 1's are in that array
-  horizontal.splice(whiteQueen[1], 1, 0);
-  // Includes() will return true if that value is found, and false if not found
-  collision = horizontal.includes(1);
-
-  // Vertical
-  let accumulator = 0;
-  board.forEach(function (el) {
-    let index = el.indexOf(1);
-    // Compare whiteQueen[1] value to the value of the index where another 1 is found as forEach loops through each inner array
-    if (index === whiteQueen[1]) {
-      accumulator += 1;
-    }
-  })
-  // If two 1's are found, then accumulator must equal 2, and therefore there is a collision
-  if (accumulator === 2) {
-    collision = true;
-  }
 
   // Diagonal
   let b = whiteQueen[0];
@@ -83,7 +63,7 @@ const queenThreat = function (board) {
 
 
 let whiteQueen = [0, 5];
-let blackQueen = [5, 0];
+let blackQueen = [1, 5];
 let generatedBoard = generateBoard(whiteQueen, blackQueen);
 console.log(generatedBoard);
 console.log(queenThreat(generatedBoard));
